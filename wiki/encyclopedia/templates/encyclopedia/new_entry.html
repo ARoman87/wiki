@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Entry
+{% endblock %}
+
+{% block body %}
+    {% if messages %} 
+
+        {% for message in messages%}
+
+            <h2>{{message}}</h2>
+        {% endfor %}
+
+    {% else %}
+
+        <h1>Create a New Entry</h1>
+    {% endif %}
+
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="create" class="create">Create</button>
+
+</form>
+
+{% endblock %}

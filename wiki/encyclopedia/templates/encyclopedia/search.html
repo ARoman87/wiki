@@ -1,0 +1,34 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+
+    
+
+        {% if partial %}
+
+        <h1>You searched for:</h1>
+        <div class="line"></div>
+
+            {% for partials in partial %}
+
+            <a href="{% url 'entry' title=partials %}"><li>{{partials}}</li></a>
+
+            {% endfor %}
+
+        {% else %}
+
+            <h1>There were no matching results for "{{entry}}".</h1>
+            <div class="line"></div>
+
+            If you would like to create a new entry, please  <a href="{% url 'new_entry' %}">Click Here.</a>
+
+        {% endif %}
+
+
+
+
+{% endblock %}

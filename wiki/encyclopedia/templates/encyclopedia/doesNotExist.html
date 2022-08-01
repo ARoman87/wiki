@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h1>"{{title|title}}" does not exist</h1>
+<div class="line"></div>
+
+If you would like to create a new entry, please click <a href="{% url 'new_entry' %}">here.</a>
+
+{% endblock %}
